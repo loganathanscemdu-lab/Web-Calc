@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web-calc</title>
+  </head>
+  <body>
+       <main id="main">
+        <div id="pip">
+        <button id="pip-button" > 
+            <svg xmlns="http://w3.org" viewBox="0 0 48 48" width="30" height="30">
+            <path d="M38 14H22v12h16V14zm4-8H6c-2.21 0-4 1.79-4 4v28c0 2.21 1.79 3.96 4 3.96h36c2.21 0 4-1.76 4-3.96V10c0-2.21-1.79-4-4-4zm0 32.03H6V9.97h36v28.06z"/>
+            </svg>
+        </button>
+        </div>
+        <form id="calc_form">
+            <header class="calc_header">
+                <input type="text" disbale id="output" class="calc_output" value=""/>
+                <output oninput="format(this)" class="input" name="result" id="result" value="" for="input-text" >0</output>
+
+            </header>
+            <footer class="calc_footer">
+                <div class="btn_group">
+                    <button data-type="operator" value="%" class="btn btn-grey">
+                        %
+                    </button>
+                    <button data-type="clear-entry"
+                    type="reset-after-operator"
+                    value="clear-entry"
+                    class="btn btn-grey">CE</button>
+                    <button data-type="clear" type="reset" value="clear" class="btn btn-grey">
+                        C
+                    </button>    
+                    <button  id="backspace" data-type="backspace" value="backspace" type="backspace" class="btn btn-grey">
+                        X
+                    </button>
+                </div>
+                 <div class="btn_group">
+                    <button data-type="operand" value="1/x" class="btn btn-dark-grey" id="1/x">1/x</button>
+                    <button data-type="operand" value="square" class="btn btn-dark-grey" id="square-root">S</button>
+                    <button data-type="operand" value="root" class="btn btn-dark-grey" id="root">R</button>
+                    <button onclick="addCalc()" id="divide" data-type="operator" value="/" class="btn btn-dark-grey" >/</button>
+                </div>
+                <div class="btn_group">
+                    <button data-type="operand" value="7" class="btn btn-dark-grey" id="7">7</button>
+                    <button data-type="operand" value="8" class="btn btn-dark-grey" id="8">8</button>
+                    <button data-type="operand" value="9" class="btn btn-dark-grey" id="9">9</button>
+                    <button onclick="addCalc()" id="multiply" data-type="operator" value="*" class="btn btn-dark-grey" >x</button>
+                </div>
+                <div class="btn_group">
+                    <button data-type="operand" value="4" class="btn btn-dark-grey" id="4">4</button>
+                    <button data-type="operand" value="5" class="btn btn-dark-grey" id="5">5</button>
+                    <button data-type="operand" value="6" class="btn btn-dark-grey" id="6">6</button>
+                    <button onclick="addCalc()" id="subtract" data-type="operator" value="-" class="btn btn-dark-grey" >-</button>
+                </div>
+                <div class="btn_group">
+                    <button data-type="operand" value="1" class="btn btn-dark-grey" id="1">1</button>
+                    <button data-type="operand" value="2" class="btn btn-dark-grey" id="2">2</button>
+                    <button data-type="operand" value="3" class="btn btn-dark-grey" id="3">3</button>
+                    <button onclick="addCalc()" id="addition" data-type="operator" value="+" class="btn btn-dark-grey">+</button>
+                </div>
+                <div class="btn_group">
+                    <button data-type="operator" value="invert" class="btn btn-dark-grey">
+                        +/-
+                    </button>
+                    <button data-type="operand" value="0" class="btn btn-dark-grey">0</button>
+                    <button data-type="operand" value="." class="btn btn-dark-grey">.</button>
+                    <button id="equal" value="=" data-type="operator" class="btn btn-dark-grey">=</button>
+                </div>
+            </footer>
+        </form>
+       </main>
+            <script type="module" src="src/main.js"></script>
+    </body>
+</html>
